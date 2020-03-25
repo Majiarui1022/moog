@@ -57,6 +57,10 @@
               <div class="name">Station<br>inactive</div>
             </div>
           </div>
+          <div class="bot-btn">
+            <p>设备管理：资源保障处装备技术模块</p>
+            <p>负责人：杨春辉</p>
+          </div>
         </div>
         <div class="sta-right">
           <div id="charts"></div>
@@ -465,6 +469,8 @@
         width: 410px;
         height: 100%;
         border-right: 1px solid #B1C1D6;
+        position: relative;
+
         .img-box{
           width: 394px;
           height: 207px;
@@ -514,6 +520,19 @@
           background:rgba(225,234,248,1);
           margin-top: 20px;
           margin-bottom: 25px;
+        }
+        .bot-btn{
+          width:294px;
+          height:50px;
+          background:linear-gradient(0deg,rgba(190,190,190,1) 0%,rgba(190,190,190,1) 0%,rgba(235,241,241,1) 53%,rgba(190,190,190,1) 100%);
+          position: absolute;
+          left: 16px;
+          bottom: 0;
+          p{
+            font-size:16px;
+            color:rgba(51,51,51,1);
+            line-height:25px;
+          }
         }
       }
       .sta-right{

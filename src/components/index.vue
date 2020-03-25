@@ -2,7 +2,7 @@
     <div class="index-box">
       <div class="name-tit">NBD底盘试验室-MOOG液压伺服试验系统 <img src="../assets/img/logo.png" class="logo" alt=""></div>
       <div class="content">
-          <div class="A-con" v-for="(item,index) in dataList" :key="index">
+        <div class="A-con" v-for="(item,index) in dataList" :key="index">
             <div class="left">
               <img src="../assets/img/tu.png" alt="">
               <p class="IP_name">IP:{{item.host}}</p>
@@ -17,7 +17,11 @@
               </div>
             </div>
           </div>
+        <div class="name">
+          <p>设备管理：资源保障处装备技术模块</p>
+          <p>负责人：杨春辉</p>
         </div>
+      </div>
     </div>
 </template>
 
@@ -110,6 +114,7 @@
       padding-top: 35px;
       padding-left: 16px;
       background-image: url("../assets/img/bigBj.png");
+      position: relative;
       >div{
         float: left;
         overflow: hidden;
@@ -117,7 +122,7 @@
         .left{
           float: left;
           width:291px;
-          height:640px;
+          height:620px;
           border:1px solid rgba(109, 152, 214, 1);
           box-shadow:0px 11px 57px 0px rgba(36,44,64,0.4);
           background: url("../assets/img/concurter.png") no-repeat;
@@ -139,8 +144,6 @@
         }
         .right{
           float: left;
-          width: 128px;
-          height: 99px;
           margin-left: 8px;
           .A-ms{
             width: 100%;
@@ -148,8 +151,8 @@
             overflow: hidden;
             cursor: pointer;
             .Status-B{
-              width: 97px;
-              height: 97px;
+              width: 90px;
+              height: 90px;
               float: left;
               box-shadow:0px 11px 57px 0px rgba(36,44,64,0.4);
               background: url("../assets/img/status.png") no-repeat;
@@ -157,7 +160,7 @@
               img{
                 display: block;
                 margin: 0 auto;
-                width: 66px;
+                width: 56px;
               }
               p{
                 font-size:12px;
@@ -172,7 +175,7 @@
             .Sta-name{
               float: left;
               width: 30px;
-              height: 97px;
+              height: 90px;
               box-shadow:0px 11px 57px 0px rgba(36,44,64,0.4);
               border-left: 0;
               display: flex;
@@ -182,6 +185,19 @@
               background-size: 100% 100%;
             }
           }
+        }
+      }
+      .name{
+        width:294px;
+        height:50px;
+        background:linear-gradient(0deg,rgba(190,190,190,1) 0%,rgba(190,190,190,1) 0%,rgba(235,241,241,1) 53%,rgba(190,190,190,1) 100%);
+        position: absolute;
+        left: 16px;
+        bottom: 0;
+        p{
+          font-size:16px;
+          color:rgba(51,51,51,1);
+          line-height:25px;
         }
       }
     }

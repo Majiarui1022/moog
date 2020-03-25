@@ -14,6 +14,10 @@
             <ul>
               <li :class="SelectIndex === index ? 'active' : ''" v-for="(item,index) in fileNameList" :key="index" @click="selectFile(item,index)">{{item}}</li>
             </ul>
+            <div class="bot-btn">
+              <p>设备管理：资源保障处装备技术模块</p>
+              <p>负责人：杨春辉</p>
+            </div>
           </div>
         </div>
         <div class="border-b"></div>
@@ -433,8 +437,10 @@
           height: calc(100% - 62px);
           padding-top: 17px;
           padding-left: 12px;
+          position: relative;
           ul{
             overflow: hidden;
+            height: calc(100% - 50px);
             li{
               width: 50%;
               float: left;
@@ -447,6 +453,19 @@
                 background: #405FC8;
                 color: #FFFFFF;
               }
+            }
+          }
+          .bot-btn{
+            width:294px;
+            height:50px;
+            background:linear-gradient(0deg,rgba(190,190,190,1) 0%,rgba(190,190,190,1) 0%,rgba(235,241,241,1) 53%,rgba(190,190,190,1) 100%);
+            position: absolute;
+            left: 16px;
+            bottom: 0;
+            p{
+              font-size:16px;
+              color:rgba(51,51,51,1);
+              line-height:25px;
             }
           }
         }
