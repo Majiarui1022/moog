@@ -139,6 +139,26 @@
                   <div class="name">amplitude</div>
                   <div class="value">{{proData.amplitude}}</div>
                 </div>
+
+                <div class="cyde-row">
+                  <div class="name">type</div>
+                  <div class="value">{{proData.current_application_type}}</div>
+                </div>
+
+                <div class="cyde-row">
+                  <div class="name">enabled</div>
+                  <div class="value">{{proData.enabled}}</div>
+                </div>
+
+                <div class="cyde-row">
+                  <div class="name">control_loop_state</div>
+                  <div class="value">{{proData.control_loop_state}}</div>
+                </div>
+
+                <div class="cyde-row">
+                  <div class="name">transducer_name</div>
+                  <div class="value">{{proData.transducer_name}}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -280,7 +300,7 @@
           this.$router.go(-1)
         },
         initWebSocketTwo(){
-          const wsuri = `ws://10.102.100.120:8003/project/udp_${this.$route.query.ip}_${this.$route.query.name}/`;
+          const wsuri = `ws://10.102.100.120:8003/project/fp_${this.$route.query.ip}_${this.$route.query.name}/`;
           this.websockTwo = new WebSocket(wsuri);//这里面的this都指向vue
           this.websock.onopen = this.websocketopenTwo;
           this.websockTwo.onmessage = this.websocketonmessageTwo;
@@ -299,7 +319,7 @@
         },
         websocketonmessage(e) { //数据接收
           let ObjData = JSON.parse(e.data);
-          // console.log(ObjData)
+          console.log(ObjData)
           this.proData = ObjData.text
           // console.log(this.proData.current_application_state)
         },
@@ -409,6 +429,11 @@
   .showdata{
     width:1366px;
     height:768px;
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    margin-left:-683px;
+    margin-top:-384px;
     .showTit{
       width: 1351px;
       height: 60px;

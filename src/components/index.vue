@@ -91,6 +91,11 @@
   .index-box {
     width: 1366px;
     height: 768px;
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    margin-left:-683px;
+    margin-top:-384px;
     .name-tit {
       width: 1351px;
       height: 60px;
