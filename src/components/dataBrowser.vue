@@ -1,6 +1,8 @@
 <template>
     <div class="data_browser">
-      <div class="showTit">NBD底盘试验室-MOOG液压伺服试验系统 <img src="../assets/img/logo.png" class="logo" alt=""></div>
+      <div class="showTit">底盘试验室-MOOG液压伺服试验系统 
+        <!-- <img src="../assets/img/logo.png" class="logo" alt=""> -->
+      </div>
       <div class="show-nav">
         <div class="back">
           <img src="../assets/img/fanhui.png" alt="" @click="GoBack">
@@ -15,8 +17,8 @@
               <li :class="SelectIndex === index ? 'active' : ''" v-for="(item,index) in fileNameList" :key="index" @click="selectFile(item,index)">{{item}}</li>
             </ul>
             <div class="bot-btn">
-              <p>设备管理：资源保障处装备技术模块</p>
-              <p>负责人：杨春辉</p>
+              <p>设备管理：</p>
+              <p>负责人：马某</p>
             </div>
           </div>
         </div>
@@ -215,7 +217,7 @@
         ReadFile(item){
           this.$axios({
             method: 'get',
-            url: `http://10.102.100.120:8003/read_file?file_name=${item}`,
+            url: `http://www.kongfunion.club/read_file?file_name=${item}`,
             headers: {
               'Authorization':'token',
               'Accept':"application/json; charset=utd-8"
@@ -227,7 +229,7 @@
           });
         },
         initWebSocket(name) {
-          const wsuri = `ws://10.102.100.120:8003/project/${name}/`;
+          const wsuri = `ws://www.kongfunion.club/ws/project/${name}/`;
           this.websock = new WebSocket(wsuri);//这里面的this都指向vue
           this.websock.onopen = this.websocketopen;
           this.websock.onmessage = this.websocketonmessage;
@@ -339,7 +341,7 @@
 
         this.$axios({
           method: 'get',
-          url: 'http://10.102.100.120:8003/file_name',
+          url: 'http://www.kongfunion.club/file_name',
           headers: {
             'Authorization':'token',
             'Accept':"application/json; charset=utd-8"

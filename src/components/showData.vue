@@ -1,6 +1,8 @@
 <template>
     <div class="showdata">
-      <div class="showTit">NBD底盘试验室-MOOG液压伺服试验系统<img src="../assets/img/logo.png" class="logo" alt=""></div>
+      <div class="showTit">底盘试验室-MOOG液压伺服试验系统
+        <!-- <img src="../assets/img/logo.png" class="logo" alt=""> -->
+      </div>
       <div class="show-nav">
         <div class="back">
           <img src="../assets/img/fanhui.png" alt="" @click="goBack">
@@ -58,8 +60,8 @@
             </div>
           </div>
           <div class="bot-btn">
-            <p>设备管理：资源保障处装备技术模块</p>
-            <p>负责人：杨春辉</p>
+            <p>设备管理：</p>
+            <p>负责人：马某</p>
           </div>
         </div>
         <div class="sta-right">
@@ -300,14 +302,17 @@
           this.$router.go(-1)
         },
         initWebSocketTwo(){
-          const wsuri = `ws://10.102.100.120:8003/project/fp_${this.$route.query.ip}_${this.$route.query.name}/`;
+          var str_rep=this.$route.query.name.replace(/\+/g,"");
+          console.log(str_rep)
+          const wsuri = `ws://www.kongfunion.club/ws/project/fp_${this.$route.query.ip}_${str_rep}/`;
           this.websockTwo = new WebSocket(wsuri);//这里面的this都指向vue
           this.websock.onopen = this.websocketopenTwo;
           this.websockTwo.onmessage = this.websocketonmessageTwo;
           this.websockTwo.onclose = this.websocketcloseTwo;
         },
         initWebSocket() {
-          const wsuri = `ws://10.102.100.120:8003/project/station_${this.$route.query.ip}_${this.$route.query.name}/`;
+          var str_rep=this.$route.query.name.replace(/\+/g,"");
+          const wsuri = `ws://www.kongfunion.club/ws/project/station_${this.$route.query.ip}_${str_rep}/`;
           this.websock = new WebSocket(wsuri);//这里面的this都指向vue
           this.websock.onopen = this.websocketopen;
           this.websock.onmessage = this.websocketonmessage;
@@ -596,7 +601,7 @@
                 width:212px;
                 height:161px;
                 .number{
-                  font-size:80px;
+                  font-size:60px;
                   color:rgba(222,26,0,1);
                   margin-top: 14px;
                   text-align: center;
@@ -645,7 +650,7 @@
                 border-radius:3px;
                 margin: 6px 0;
                 .nei{
-                  width: 10%;
+                  width: 0;
                   height: 100%;
                   background:rgba(109,152,214,1);
                   border-radius:2px;

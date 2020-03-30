@@ -1,6 +1,8 @@
 <template>
     <div class="index-box">
-      <div class="name-tit">NBD底盘试验室-MOOG液压伺服试验系统 <img src="../assets/img/logo.png" class="logo" alt=""></div>
+      <div class="name-tit">底盘试验室-MOOG液压伺服试验系统 
+        <!-- <img src="../assets/img/logo.png" class="logo" alt=""> -->
+      </div>
       <div class="content">
         <div class="A-con" v-for="(item,index) in dataList" :key="index">
             <div class="left">
@@ -18,8 +20,11 @@
             </div>
           </div>
         <div class="name">
-          <p>设备管理：资源保障处装备技术模块</p>
-          <p>负责人：杨春辉</p>
+          <p>设备管理：</p>
+          <p>负责人：马某</p>
+        </div>
+        <div style="width:100%;text-align:center;height:50px;line-height:50px;">
+          <a data-v-0dd469f8="" href="http://www.beian.miit.gov.cn">沪ICP备18031142号-13</a>
         </div>
       </div>
     </div>
@@ -53,7 +58,7 @@
           })
         },
         initWebSocket() {
-          const wsuri = `ws://10.102.100.120:8003/project/controllers/`;
+          const wsuri = `ws://www.kongfunion.club/ws/project/controllers/`;
           this.websock = new WebSocket(wsuri);//这里面的this都指向vue
           this.websock.onopen = this.websocketopen;
           this.websock.onmessage = this.websocketonmessage;
@@ -123,7 +128,7 @@
       >div{
         float: left;
         overflow: hidden;
-        margin-right: 20px;
+        margin-right: 10px;
         .left{
           float: left;
           width:291px;
@@ -156,7 +161,7 @@
             overflow: hidden;
             cursor: pointer;
             .Status-B{
-              width: 90px;
+              width: 75px;
               height: 90px;
               float: left;
               box-shadow:0px 11px 57px 0px rgba(36,44,64,0.4);
@@ -179,7 +184,7 @@
             }
             .Sta-name{
               float: left;
-              width: 30px;
+              width: 63px;
               height: 90px;
               box-shadow:0px 11px 57px 0px rgba(36,44,64,0.4);
               border-left: 0;
