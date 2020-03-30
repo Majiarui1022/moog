@@ -123,7 +123,7 @@
       >div{
         float: left;
         overflow: hidden;
-        margin-right: 20px;
+        margin-right: 10px;
         .left{
           float: left;
           width:291px;
@@ -156,7 +156,7 @@
             overflow: hidden;
             cursor: pointer;
             .Status-B{
-              width: 90px;
+              width: 75px;
               height: 90px;
               float: left;
               box-shadow:0px 11px 57px 0px rgba(36,44,64,0.4);
@@ -179,7 +179,7 @@
             }
             .Sta-name{
               float: left;
-              width: 30px;
+              width: 63px;
               height: 90px;
               box-shadow:0px 11px 57px 0px rgba(36,44,64,0.4);
               border-left: 0;

@@ -300,14 +300,17 @@
           this.$router.go(-1)
         },
         initWebSocketTwo(){
-          const wsuri = `ws://10.102.100.120:8003/project/fp_${this.$route.query.ip}_${this.$route.query.name}/`;
+          var str_rep=this.$route.query.name.replace(/\+/g,"");
+          console.log(str_rep)
+          const wsuri = `ws://10.102.100.120:8003/project/fp_${this.$route.query.ip}_${str_rep}/`;
           this.websockTwo = new WebSocket(wsuri);//这里面的this都指向vue
           this.websock.onopen = this.websocketopenTwo;
           this.websockTwo.onmessage = this.websocketonmessageTwo;
           this.websockTwo.onclose = this.websocketcloseTwo;
         },
         initWebSocket() {
-          const wsuri = `ws://10.102.100.120:8003/project/station_${this.$route.query.ip}_${this.$route.query.name}/`;
+          var str_rep=this.$route.query.name.replace(/\+/g,"");
+          const wsuri = `ws://10.102.100.120:8003/project/station_${this.$route.query.ip}_${str_rep}/`;
           this.websock = new WebSocket(wsuri);//这里面的this都指向vue
           this.websock.onopen = this.websocketopen;
           this.websock.onmessage = this.websocketonmessage;
@@ -596,7 +599,7 @@
                 width:212px;
                 height:161px;
                 .number{
-                  font-size:80px;
+                  font-size:60px;
                   color:rgba(222,26,0,1);
                   margin-top: 14px;
                   text-align: center;
@@ -645,7 +648,7 @@
                 border-radius:3px;
                 margin: 6px 0;
                 .nei{
-                  width: 10%;
+                  width: 0;
                   height: 100%;
                   background:rgba(109,152,214,1);
                   border-radius:2px;
